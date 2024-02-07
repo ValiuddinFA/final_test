@@ -1,7 +1,8 @@
 #project requirements down below
-
-
-
+pytest
+faker
+pytest-mock
+pytest-html
 # dev requirements down below
 pytest
 tox

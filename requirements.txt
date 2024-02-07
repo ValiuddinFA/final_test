@@ -1,3 +1,7 @@
 ipywidgets
 notebook
 ensure
+pytest
+faker
+pytest-mock
+pytest-html

@@ -1,34 +1,33 @@
-# # un-comment everything and remove this line
-# name: Python application
+name: Python application
 
-# on:
-#   push:
-#     branches: ["master"]
-#   pull_request:
-#     branches: ["master"]
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
 
-# permissions:
-#   contents: read
+permissions:
+  contents: read
 
-# jobs:
-#   build:
+jobs:
+  build:
 
-#     runs-on: ${{ matrix.os }}
-#     strategy:
-#       matrix:
-#         os: [ubuntu-latest, windows-latest]
-#         python-versions: ["3.8", "3.9", "3.10"]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python-versions: ["3.8", "3.9", "3.10"]
 
-#     steps:
-#     - uses: actions/checkout@v3
-#     - name: Set up Python ${{ matrix.python-versions }}
-#       uses: actions/setup-python@v3
-#       with:
-#         python-version: ${{ matrix.python-versions }}
-#     - name: Install dependencies
-#       run:
-#         python -m pip install --upgrade pip
-#         pip install flake8 pytest tox tox-gh-actions
-#         pip install -r requirements.txt
-#     - name: Test with tox
-#       run: tox
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-versions }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-versions }}
+    - name: Install dependencies
+      run:
+        python -m pip install --upgrade pip
+        pip install flake8 pytest tox tox-gh-actions
+        pip install -r requirements.txt
+    - name: Test with tox
+      run: tox
